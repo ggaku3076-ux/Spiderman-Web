@@ -541,23 +541,59 @@ footer p {
 
 @media (max-width: 900px) {
   .site-header {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.75rem 1rem;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    font-size: 1.12rem;
+  }
+
+  .brand-logo {
+    width: 2.2rem;
   }
 
   .nav-links {
-    width: 100%;
+    justify-content: flex-end;
+    min-width: 0;
     overflow-x: auto;
     padding-bottom: 0.1rem;
+    white-space: nowrap;
+    scrollbar-width: none;
   }
 
-  .hero,
-  .split {
-    grid-template-columns: 1fr;
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
 
   .hero {
-    min-height: auto;
+    min-height: calc(100svh - 4.2rem);
+    align-items: flex-end;
+    padding: 45svh 1rem 2rem;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(2, 3, 9, 0.08) 0%, rgba(2, 3, 9, 0.22) 42%, rgba(2, 3, 9, 0.94) 100%),
+      linear-gradient(90deg, rgba(2, 3, 9, 0.22) 0%, rgba(2, 3, 9, 0.08) 58%, rgba(2, 3, 9, 0.22) 100%);
+  }
+
+  .hero-video {
+    object-position: center top;
+  }
+
+  .hero-copy {
+    max-width: 34rem;
+  }
+
+  .hero-copy p:not(.eyebrow) {
+    max-width: 31rem;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
   }
 
   .hero-visual {
@@ -577,15 +613,44 @@ footer p {
 
 @media (max-width: 520px) {
   .hero {
-    padding-top: 2rem;
+    min-height: calc(100svh - 4rem);
+    padding: 46svh 1rem 1.25rem;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.45rem;
+    font-size: 0.88rem;
   }
 
   h1 {
-    font-size: 3rem;
+    max-width: 9.5ch;
+    margin-bottom: 0.65rem;
+    font-size: clamp(2.55rem, 15vw, 3.65rem);
+    line-height: 0.9;
+  }
+
+  .hero-copy p:not(.eyebrow) {
+    margin-bottom: 0;
+    font-size: 0.98rem;
+    line-height: 1.42;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin-top: 1rem;
   }
 
   .button {
-    width: 100%;
+    width: auto;
+    min-height: 2.75rem;
+    padding: 0.7rem 0.75rem;
+    font-size: 0.95rem;
   }
 
   .hero-visual {
