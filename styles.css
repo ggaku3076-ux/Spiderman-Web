@@ -126,6 +126,9 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .hero-copy {
@@ -381,6 +384,8 @@ footer p {
 
 .section {
   padding: 4rem 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 560px;
 }
 
 .section-heading {
@@ -544,6 +549,7 @@ footer p {
     align-items: center;
     flex-direction: row;
     padding: 0.75rem 1rem;
+    backdrop-filter: none;
   }
 
   .brand {
@@ -582,7 +588,7 @@ footer p {
 
   .hero-video {
     object-position: 68% top;
-    transform: scale(0.97);
+    transform: translateZ(0) scale(0.97);
   }
 
   .hero-copy {
@@ -609,6 +615,35 @@ footer p {
   .signal {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .stats article,
+  .mission-card,
+  .panel-panel,
+  .gear-item,
+  .signal,
+  .button.ghost {
+    backdrop-filter: none;
+  }
+
+  .stats article,
+  .mission-card,
+  .panel-panel,
+  .gear-item,
+  .signal {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  }
+
+  .mission-card::after {
+    display: none;
+  }
+
+  .signal-button {
+    animation: none;
+  }
+
+  .signal-button.flash {
+    animation: none;
   }
 }
 
@@ -654,11 +689,29 @@ footer p {
     font-size: 0.95rem;
   }
 
+  .section {
+    padding: 3rem 0;
+  }
+
   .hero-visual {
     min-height: 24rem;
   }
 
   .mask {
     width: 9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
