@@ -582,6 +582,7 @@ footer p {
 
   .hero-video {
     object-position: 68% top;
+    transform: scale(0.97);
   }
 
   .hero-copy {
