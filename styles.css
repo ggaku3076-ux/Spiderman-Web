@@ -583,6 +583,22 @@ footer p {
 }
 
 @media (max-width: 900px) {
+  html,
+  body {
+    background: #000000;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  main,
+  footer,
+  .hero,
+  .shadow-page {
+    background: #000000;
+  }
+
   .site-header {
     align-items: center;
     flex-direction: row;
@@ -625,6 +641,7 @@ footer p {
   }
 
   .hero-video {
+    background: #000000;
     object-position: 68% top;
     transform: translateZ(0) scale(0.97);
   }
@@ -648,6 +665,7 @@ footer p {
   }
 
   .shadow-image {
+    background: transparent;
     width: min(78vw, 360px);
     max-height: calc(100svh - 6rem);
   }
