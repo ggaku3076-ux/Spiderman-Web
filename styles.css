@@ -116,6 +116,7 @@ footer {
   inset: 0;
   z-index: 1;
   background:
+    linear-gradient(180deg, transparent 0%, transparent 72%, #000000 100%),
     linear-gradient(90deg, rgba(2, 3, 9, 0.97) 0%, rgba(2, 3, 9, 0.78) 46%, rgba(2, 3, 9, 0.34) 100%),
     linear-gradient(0deg, rgba(2, 3, 9, 0.92) 0%, rgba(2, 3, 9, 0.18) 48%, rgba(2, 3, 9, 0.56) 100%);
 }
@@ -203,16 +204,24 @@ footer p {
   min-height: 100svh;
   display: grid;
   place-items: center;
-  padding: clamp(4rem, 7vw, 6rem) clamp(1rem, 5vw, 5rem);
+  margin-top: -5rem;
+  padding: clamp(8rem, 12vw, 11rem) clamp(1rem, 5vw, 5rem) clamp(4rem, 7vw, 6rem);
   background: #000000;
   scroll-margin-top: 4rem;
 }
 
 .shadow-page::before {
-  content: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, #000000 0%, transparent 18%, transparent 100%);
 }
 
 .shadow-image {
+  position: relative;
+  z-index: 2;
   display: block;
   width: min(38vw, 430px);
   max-width: 100%;
@@ -626,7 +635,12 @@ footer p {
 
   .shadow-page {
     min-height: 100svh;
+    margin-top: 0;
     padding: 4.5rem 1rem 2rem;
+  }
+
+  .shadow-page::before {
+    content: none;
   }
 
   .shadow-image {
@@ -711,6 +725,7 @@ footer p {
   }
 
   .shadow-page {
+    margin-top: 0;
     padding: 4.25rem 1rem 1.5rem;
   }
 
