@@ -18,9 +18,8 @@
 }
 
 html {
-  background: #020309;
+  background: #000000;
   scroll-behavior: smooth;
-  overscroll-behavior-y: none;
 }
 
 body {
@@ -28,13 +27,8 @@ body {
   min-height: 100vh;
   color: var(--paper);
   font-family: var(--font-body);
-  background-color: #020309;
-  background:
-    radial-gradient(circle at top left, rgba(226, 29, 47, 0.13), transparent 30rem),
-    radial-gradient(circle at 80% 10%, rgba(18, 63, 131, 0.16), transparent 24rem),
-    linear-gradient(135deg, #020309 0%, #05070c 46%, #080d18 100%);
+  background: #000000;
   overflow-x: hidden;
-  overscroll-behavior-y: none;
 }
 
 a {
@@ -103,7 +97,7 @@ main,
 footer {
   position: relative;
   z-index: 1;
-  background-color: #020309;
+  background-color: #000000;
 }
 
 .hero {
@@ -112,7 +106,7 @@ footer {
   display: flex;
   align-items: center;
   padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 5vw, 5rem);
-  background-color: #020309;
+  background-color: #000000;
   overflow: hidden;
 }
 
@@ -207,29 +201,24 @@ footer p {
 .shadow-page {
   position: relative;
   min-height: 100svh;
-  display: flex;
-  align-items: flex-end;
-  padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 5vw, 5rem);
+  display: grid;
+  place-items: center;
+  padding: clamp(4rem, 7vw, 6rem) clamp(1rem, 5vw, 5rem);
   background: #000000;
-  overflow: hidden;
   scroll-margin-top: 4rem;
 }
 
 .shadow-page::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, transparent 35%, rgba(0, 0, 0, 0.18) 100%);
+  content: none;
 }
 
 .shadow-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+  width: min(38vw, 430px);
+  max-width: 100%;
+  max-height: calc(100svh - 7rem);
+  height: auto;
+  object-fit: contain;
   object-position: center;
   background: #000000;
 }
@@ -637,17 +626,12 @@ footer p {
 
   .shadow-page {
     min-height: 100svh;
-    align-items: flex-end;
-    padding: 52svh 1rem 2rem;
-  }
-
-  .shadow-page::before {
-    background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.16) 44%, rgba(0, 0, 0, 0.92) 100%);
+    padding: 4.5rem 1rem 2rem;
   }
 
   .shadow-image {
-    object-position: center top;
+    width: min(78vw, 360px);
+    max-height: calc(100svh - 6rem);
   }
 
   .split {
@@ -727,7 +711,12 @@ footer p {
   }
 
   .shadow-page {
-    padding: 57svh 1rem 1.5rem;
+    padding: 4.25rem 1rem 1.5rem;
+  }
+
+  .shadow-image {
+    width: min(84vw, 330px);
+    max-height: calc(100svh - 5.5rem);
   }
 
   .hero-actions {
