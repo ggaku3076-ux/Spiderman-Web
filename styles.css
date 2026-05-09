@@ -94,6 +94,12 @@ button {
   border-color: var(--red);
 }
 
+.mobile-nav,
+.mobile-scroll-content,
+.hero-actions.mobile-actions {
+  display: none;
+}
+
 main,
 footer {
   position: relative;
@@ -647,6 +653,23 @@ footer p {
 
   .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .desktop-nav,
+  .hero-actions.desktop-actions {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .hero-actions.mobile-actions {
+    display: grid;
+  }
+
+  .mobile-scroll-content {
+    display: block;
   }
 
   .hero {
