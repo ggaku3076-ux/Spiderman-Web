@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spiderman Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Spiderman Web">
+        <img class="brand-logo" src="Spider-Man_Wallpaper-removebg-preview.png" alt="" />
+        <span>Spiderman Web</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#home">Home</a>
+        <a href="#missions">Misi</a>
+        <a href="#gear">Gear</a>
+        <a href="#signal">Signal</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline aria-label="Video landing Spiderman Web">
+          <source src="104883-668881873.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-copy">
+          <p class="eyebrow">Friendly Neighborhood</p>
+          <h1>Jaga kota, ayunkan harapan.</h1>
+          <p>
+            Portal bertema pahlawan laba-laba dengan video landing sinematik,
+            radar misi, dan panel aksi untuk patroli malam.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#missions">Lihat Misi</a>
+            <a class="button ghost" href="#signal">Kirim Sinyal</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Status patroli">
+        <article>
+          <strong>24/7</strong>
+          <span>Patroli Kota</span>
+        </article>
+        <article>
+          <strong>98%</strong>
+          <span>Respons Cepat</span>
+        </article>
+        <article>
+          <strong>12</strong>
+          <span>Distrik Aman</span>
+        </article>
+      </section>
+
+      <section class="section" id="missions">
+        <div class="section-heading">
+          <p class="eyebrow">Mission Board</p>
+          <h2>Misi malam ini</h2>
+        </div>
+        <div class="mission-grid">
+          <article class="mission-card active">
+            <span class="card-icon">01</span>
+            <h3>Rooftop Sweep</h3>
+            <p>Scan atap gedung pusat kota dan tandai area dengan aktivitas mencurigakan.</p>
+          </article>
+          <article class="mission-card">
+            <span class="card-icon">02</span>
+            <h3>Bridge Watch</h3>
+            <p>Monitor jembatan utama, cek kemacetan, dan bantu evakuasi bila perlu.</p>
+          </article>
+          <article class="mission-card">
+            <span class="card-icon">03</span>
+            <h3>Subway Alert</h3>
+            <p>Pastikan jalur bawah tanah aman setelah laporan getaran tidak biasa.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="gear">
+        <div class="panel-panel">
+          <p class="eyebrow">Web Tech</p>
+          <h2>Perlengkapan patroli</h2>
+          <p>
+            Interface ini menampilkan gaya komik modern dengan kontrol singkat
+            untuk mode web, sensor, dan stealth.
+          </p>
+        </div>
+        <div class="gear-list">
+          <button class="gear-item selected" type="button" data-mode="impact">
+            <span>Impact Web</span>
+            <small>Stun cepat</small>
+          </button>
+          <button class="gear-item" type="button" data-mode="scanner">
+            <span>Spider Scanner</span>
+            <small>Radar kota</small>
+          </button>
+          <button class="gear-item" type="button" data-mode="stealth">
+            <span>Shadow Suit</span>
+            <small>Mode senyap</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="section signal" id="signal">
+        <div>
+          <p class="eyebrow">Spider Signal</p>
+          <h2>Aktifkan panggilan kota</h2>
+          <p id="signalText">Sinyal siaga. Pilih mode perlengkapan untuk mengubah status.</p>
+        </div>
+        <button class="signal-button" type="button" id="signalButton" aria-label="Aktifkan sinyal">
+          <img src="Spider-Man_Wallpaper-removebg-preview.png" alt="" />
+        </button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Fan-made interface concept. Dibuat untuk tema pahlawan laba-laba.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
