@@ -43,16 +43,52 @@ button {
 
 .site-header {
   position: sticky;
-  top: 0;
+  top: 1rem;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem clamp(1rem, 5vw, 5rem);
-  background: rgba(2, 3, 9, 0.88);
-  border-bottom: 1px solid var(--line);
+  width: min(92vw, 1480px);
+  min-height: 6.25rem;
+  margin: 1rem auto 0;
+  padding: 0.85rem clamp(1.25rem, 3vw, 3rem);
+  background:
+    linear-gradient(90deg, rgba(226, 29, 47, 0.18), transparent 28%, transparent 70%, rgba(43, 124, 255, 0.18)),
+    rgba(2, 3, 9, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-left-color: rgba(226, 29, 47, 0.55);
+  border-right-color: rgba(43, 124, 255, 0.55);
+  box-shadow:
+    0 0 30px rgba(226, 29, 47, 0.14),
+    0 0 42px rgba(43, 124, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(18px);
+  clip-path: polygon(3rem 0, calc(100% - 3rem) 0, 100% 40%, 100% 100%, 0 100%, 0 40%);
+}
+
+.site-header::before,
+.site-header::after {
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  width: 10rem;
+  height: calc(100% - 1.2rem);
+  pointer-events: none;
+  opacity: 0.38;
+  background:
+    repeating-radial-gradient(circle at 0 0, transparent 0 1.25rem, currentColor 1.28rem 1.33rem),
+    repeating-conic-gradient(from 10deg at 0 0, transparent 0 17deg, currentColor 18deg 19deg);
+}
+
+.site-header::before {
+  left: 0.6rem;
+  color: rgba(226, 29, 47, 0.8);
+}
+
+.site-header::after {
+  right: 0.6rem;
+  color: rgba(71, 157, 255, 0.8);
+  transform: scaleX(-1);
 }
 
 .brand,
@@ -62,36 +98,74 @@ button {
 }
 
 .brand {
+  position: relative;
+  z-index: 1;
   gap: 0.7rem;
+  min-width: 15rem;
+  min-height: 4.35rem;
+  padding: 0 2.25rem 0 1rem;
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0;
+  background:
+    linear-gradient(110deg, rgba(226, 29, 47, 0.16), rgba(255, 255, 255, 0.04) 42%, transparent 43%);
+  border-right: 1px solid rgba(255, 255, 255, 0.22);
+  clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%);
 }
 
 .brand-logo {
-  width: 2.6rem;
+  width: 3.2rem;
   aspect-ratio: 1;
   object-fit: contain;
   object-position: center;
+  filter: drop-shadow(0 0 12px rgba(226, 29, 47, 0.7));
 }
 
 .nav-links {
-  gap: clamp(0.7rem, 2vw, 1.8rem);
+  position: relative;
+  z-index: 1;
+  gap: 0;
   font-size: 1rem;
   font-weight: 700;
   color: var(--muted);
 }
 
 .nav-links a {
-  padding: 0.45rem 0;
+  min-height: 3.25rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1.15rem;
   border-bottom: 2px solid transparent;
+  border-left: 1px solid rgba(255, 255, 255, 0.11);
+  text-transform: uppercase;
 }
 
 .nav-links a:hover {
   color: #ffffff;
   border-color: var(--red);
+}
+
+.desktop-nav > a:not(.nav-cta):first-child {
+  color: var(--red);
+}
+
+.nav-cta {
+  margin-left: 1.1rem;
+  min-width: 11rem;
+  justify-content: center;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(90deg, rgba(226, 29, 47, 0.22), rgba(43, 124, 255, 0.22));
+  clip-path: polygon(1.1rem 0, 100% 0, calc(100% - 1.1rem) 100%, 0 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(226, 29, 47, 0.26),
+    0 0 18px rgba(43, 124, 255, 0.18);
+}
+
+.nav-cta:hover {
+  border-color: rgba(71, 157, 255, 0.8);
 }
 
 .mobile-nav,
@@ -660,15 +734,31 @@ footer p {
   }
 
   .site-header {
+    top: 0;
+    width: 100%;
+    min-height: auto;
+    margin: 0;
     align-items: center;
     flex-direction: row;
     padding: 0.75rem 1rem;
+    clip-path: none;
     backdrop-filter: none;
+  }
+
+  .site-header::before,
+  .site-header::after {
+    display: none;
   }
 
   .brand {
     flex: 0 0 auto;
+    min-width: 0;
+    min-height: auto;
+    padding: 0;
     font-size: 1.12rem;
+    background: none;
+    border-right: 0;
+    clip-path: none;
   }
 
   .brand-logo {
@@ -677,6 +767,7 @@ footer p {
 
   .nav-links {
     justify-content: flex-end;
+    gap: clamp(0.7rem, 2vw, 1.8rem);
     min-width: 0;
     overflow-x: auto;
     padding-bottom: 0.1rem;
@@ -686,6 +777,12 @@ footer p {
 
   .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav-links a {
+    min-height: auto;
+    padding: 0.45rem 0;
+    border-left: 0;
   }
 
   .desktop-nav,
@@ -805,6 +902,10 @@ footer p {
 }
 
 @media (max-width: 520px) {
+  .brand span {
+    display: none;
+  }
+
   .hero {
     min-height: calc(100svh - 4rem);
     padding: 46svh 1rem 1.25rem;
@@ -854,6 +955,19 @@ footer p {
     min-height: 2.75rem;
     padding: 0.7rem 0.75rem;
     font-size: 0.95rem;
+  }
+
+  .music-toggle {
+    right: 1rem;
+    bottom: 4.7rem;
+    width: 2.75rem;
+    min-height: 2.75rem;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .music-label {
+    display: none;
   }
 
   .section {
