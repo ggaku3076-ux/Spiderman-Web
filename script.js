@@ -7,6 +7,8 @@ const statusByMode = {
 const gearButtons = document.querySelectorAll(".gear-item");
 const signalText = document.querySelector("#signalText");
 const signalButton = document.querySelector("#signalButton");
+const music = document.querySelector("#bgMusic");
+const musicToggle = document.querySelector(".music-toggle");
 
 gearButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -24,5 +26,28 @@ if (signalButton && signalText) {
     void signalButton.offsetWidth;
     signalButton.classList.add("flash");
     signalText.textContent = "Spider Signal terkirim. Tim patroli bergerak ke titik prioritas.";
+  });
+}
+
+if (music && musicToggle) {
+  music.volume = 0.45;
+
+  musicToggle.addEventListener("click", async () => {
+    if (music.paused) {
+      try {
+        await music.play();
+        musicToggle.classList.add("is-playing");
+        musicToggle.setAttribute("aria-pressed", "true");
+        musicToggle.setAttribute("aria-label", "Matikan musik");
+      } catch {
+        musicToggle.classList.remove("is-playing");
+      }
+      return;
+    }
+
+    music.pause();
+    musicToggle.classList.remove("is-playing");
+    musicToggle.setAttribute("aria-pressed", "false");
+    musicToggle.setAttribute("aria-label", "Putar musik");
   });
 }
