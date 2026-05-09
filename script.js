@@ -12,13 +12,17 @@ gearButtons.forEach((button) => {
   button.addEventListener("click", () => {
     gearButtons.forEach((item) => item.classList.remove("selected"));
     button.classList.add("selected");
-    signalText.textContent = statusByMode[button.dataset.mode];
+    if (signalText) {
+      signalText.textContent = statusByMode[button.dataset.mode];
+    }
   });
 });
 
-signalButton.addEventListener("click", () => {
-  signalButton.classList.remove("flash");
-  void signalButton.offsetWidth;
-  signalButton.classList.add("flash");
-  signalText.textContent = "Spider Signal terkirim. Tim patroli bergerak ke titik prioritas.";
-});
+if (signalButton && signalText) {
+  signalButton.addEventListener("click", () => {
+    signalButton.classList.remove("flash");
+    void signalButton.offsetWidth;
+    signalButton.classList.add("flash");
+    signalText.textContent = "Spider Signal terkirim. Tim patroli bergerak ke titik prioritas.";
+  });
+}

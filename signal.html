@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spiderman Web</title>
+    <title>Signal | Spiderman Web</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,23 +27,16 @@
       </nav>
     </header>
 
-    <main>
-      <section class="hero" id="home">
-        <video class="hero-video" autoplay muted loop playsinline aria-label="Video landing Spiderman Web">
-          <source src="104883-668881873.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-copy">
-          <p class="eyebrow">Friendly Neighborhood</p>
-          <h1>Jaga kota, ayunkan harapan.</h1>
-          <p>
-            Portal bertema pahlawan laba-laba dengan video landing sinematik,
-            radar misi, dan panel aksi untuk patroli malam.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="missions.html">Lihat Misi</a>
-            <a class="button ghost" href="signal.html">Kirim Sinyal</a>
-          </div>
+    <main class="page-main">
+      <section class="section signal">
+        <div>
+          <p class="eyebrow">Spider Signal</p>
+          <h2>Aktifkan panggilan kota</h2>
+          <p id="signalText">Sinyal siaga. Pilih mode perlengkapan untuk mengubah status.</p>
         </div>
+        <button class="signal-button" type="button" id="signalButton" aria-label="Aktifkan sinyal">
+          <img src="Spider-Man_Wallpaper-removebg-preview.png" alt="" />
+        </button>
       </section>
     </main>
 

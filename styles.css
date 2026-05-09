@@ -4,10 +4,7 @@
   --blue: #123f83;
   --blue-deep: #030813;
   --ink: #05070c;
-  --scene-bg:
-    radial-gradient(circle at 16% 72%, rgba(226, 29, 128, 0.22), transparent 18rem),
-    radial-gradient(circle at 82% 28%, rgba(43, 96, 190, 0.28), transparent 22rem),
-    linear-gradient(135deg, #05091a 0%, #1b1d55 42%, #281b4a 74%, #050814 100%);
+  --scene-bg: #000000;
   --paper: #f5f7ff;
   --muted: rgba(245, 247, 255, 0.66);
   --panel: rgba(8, 11, 18, 0.84);
@@ -22,7 +19,7 @@
 }
 
 html {
-  background: #05091a;
+  background: #000000;
   scroll-behavior: smooth;
 }
 
@@ -31,8 +28,7 @@ body {
   min-height: 100vh;
   color: var(--paper);
   font-family: var(--font-body);
-  background: var(--scene-bg);
-  background-attachment: fixed;
+  background: #000000;
   overflow-x: hidden;
 }
 
@@ -102,7 +98,7 @@ main,
 footer {
   position: relative;
   z-index: 1;
-  background: transparent;
+  background: #000000;
 }
 
 .hero {
@@ -121,8 +117,8 @@ footer {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, transparent 0%, transparent 70%, #05091a 100%),
-    linear-gradient(90deg, rgba(5, 9, 26, 0.9) 0%, rgba(17, 20, 56, 0.62) 46%, rgba(40, 27, 74, 0.22) 100%);
+    linear-gradient(180deg, transparent 0%, transparent 70%, #000000 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.66) 46%, rgba(0, 0, 0, 0.2) 100%);
 }
 
 .hero-video {
@@ -220,7 +216,12 @@ footer p {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(180deg, #05091a 0%, rgba(5, 9, 26, 0.76) 12%, transparent 30%, transparent 100%);
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.76) 12%, transparent 30%, transparent 100%);
+}
+
+.page-main {
+  min-height: calc(100svh - 4.5rem);
+  padding-top: clamp(2rem, 5vw, 4rem);
 }
 
 .shadow-image {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spiderman Web</title>
+    <title>Gear | Spiderman Web</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,22 +27,29 @@
       </nav>
     </header>
 
-    <main>
-      <section class="hero" id="home">
-        <video class="hero-video" autoplay muted loop playsinline aria-label="Video landing Spiderman Web">
-          <source src="104883-668881873.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-copy">
-          <p class="eyebrow">Friendly Neighborhood</p>
-          <h1>Jaga kota, ayunkan harapan.</h1>
+    <main class="page-main">
+      <section class="section split">
+        <div class="panel-panel">
+          <p class="eyebrow">Web Tech</p>
+          <h2>Perlengkapan patroli</h2>
           <p>
-            Portal bertema pahlawan laba-laba dengan video landing sinematik,
-            radar misi, dan panel aksi untuk patroli malam.
+            Interface ini menampilkan gaya komik modern dengan kontrol singkat
+            untuk mode web, sensor, dan stealth.
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="missions.html">Lihat Misi</a>
-            <a class="button ghost" href="signal.html">Kirim Sinyal</a>
-          </div>
+        </div>
+        <div class="gear-list">
+          <button class="gear-item selected" type="button" data-mode="impact">
+            <span>Impact Web</span>
+            <small>Stun cepat</small>
+          </button>
+          <button class="gear-item" type="button" data-mode="scanner">
+            <span>Spider Scanner</span>
+            <small>Radar kota</small>
+          </button>
+          <button class="gear-item" type="button" data-mode="stealth">
+            <span>Shadow Suit</span>
+            <small>Mode senyap</small>
+          </button>
         </div>
       </section>
     </main>
